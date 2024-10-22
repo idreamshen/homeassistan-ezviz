@@ -52,9 +52,7 @@ class EzvizCamera(Camera):
         self._name = config.get(CONF_NAME)
         self._motion_status = False
         self._isMaoyan = 'notmaoyan'
-        _LOGGER.error("initconfig")
         self._isMaoyan = config.get(CONF_MAOYAN)
-        _LOGGER.error('%s' % self._isMaoyan)
         self.appKey = config.get(CONF_KEY)
         self.appSecret = config.get(CONF_SEC)
         self.accessToken = ""
@@ -159,15 +157,9 @@ class EzvizCamera(Camera):
             #    _LOGGER.info("get image error")
             #    image_path = 'null'
             #    return None
-            _LOGGER.error(self._isMaoyan)
-            _LOGGER.error('%s' % self._isMaoyan)
             if self._isMaoyan == 'maoyan' :
-                _LOGGER.error("is MaoYan")
-                _LOGGER.error(self.deviceSerial)
                 image_path = self.get_device_message()
             else:
-                _LOGGER.error("not MaoYan")
-                _LOGGER.error(self.deviceSerial)
                 image_path = self.get_device_capture()
             #_LOGGER.error("Get camera image: %s" % image_path)
             #_LOGGER.error("Config: %s" % self._isMaoyan)
