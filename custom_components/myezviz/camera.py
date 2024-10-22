@@ -63,7 +63,7 @@ class EzvizCamera(Camera):
         self._is_video_history_enabled = False
 
         # Default to non-NestAware subscribed, but will be fixed during update
-        self._time_between_snapshots = datetime.timedelta(seconds=30)
+        self._time_between_snapshots = datetime.timedelta(seconds=60*60)
         self._last_image = None
         self._next_snapshot_at = None
         self._attr_unique_id = self._name + self.deviceSerial
